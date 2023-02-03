@@ -1,9 +1,8 @@
 function capitalize(word) {
   // implement me
-  return `${word[0].toUpperCase()}${word.substring(1)}`;
 }
 
-describe("capitalize", () => {
+describe.skip("capitalize", () => {
   test("should capitalize the first letter of a word", () => {
     const input = "hello";
     const output = capitalize(input);
