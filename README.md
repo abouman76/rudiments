@@ -15,6 +15,12 @@ This is repo which contains basic JavaScript exercises with jest tests.
 
 - If the tests pass, your solution works
 - Want to see a solution I implemented? use githistory
+  - Install the [`Git File History`](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history) extension in VSCode
+  - In a tab with `.test.js` file, open the command palette
+    - MAC: command + shift + p
+    - Windows & Linux: ctrl + shift + p
+  - Enter `>Git File History` (this command should autocomplete)
+  - You can now see solutions of the basic and bonus testcases
 
 ## Suggested route
 
