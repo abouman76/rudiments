@@ -1,9 +1,8 @@
-function countWords(word) {
+function countWords() {
   // Implement me
-  return word.split(" ").length;
 }
 
-describe("countWords", () => {
+describe.skip("countWords", () => {
   test("should count the words in a piece of text", () => {
     const input = "The quick brown fox jumps over the lazy dog";
     const wordCount = countWords(input);
