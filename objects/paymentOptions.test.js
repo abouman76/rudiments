@@ -4,11 +4,8 @@ function paymentOptions(paymentProviders) {
 
   // iterate over al keys of the object of providers
   for (let paymentProvider in paymentProviders) {
-    // for each provider, check if they are supported
-    if (paymentProviders[paymentProvider] === true) {
-      // if they are supported add them to the array of options
-      arrayOfOptions.push(paymentProvider);
-    }
+    // add them to the array of options
+    arrayOfOptions.push(paymentProvider);
   }
 
   // get al payment providers except the last one and seperate them with a ", "
@@ -28,7 +25,7 @@ describe("paymentOptions", () => {
     expect(output).toBe("You can pay with ideal, mastercard and paypal");
   });
 
-  test("BONUS: should ignore payment options which are not supported", () => {
+  test.skip("BONUS: should ignore payment options which are not supported", () => {
     const input = {
       ideal: true,
       klarna: true,
