@@ -10,8 +10,7 @@
       [ideal, klarna, mastercard, paypal, afterpay]
     2. Array moet de output geven van ideal, klarna, paypayl
       [ideal, klarna, paypal]
-
-    3. op delen in 2 logical statements
+    3. opdelen in 2 logical statements
 
         [ideal, klarna] paypal
 
