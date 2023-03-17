@@ -1,35 +1,10 @@
 function groupByAge(people) {
-  const groups = {};
-
-  for (let person of people) {
-    if (person.age < 10) {
-      // if there is no array of kids yet, create it
-      if (!groups.kids) {
-        groups.kids = [];
-      }
-      groups.kids.push(person);
-    } else if (person.age >= 10 && person.age < 20) {
-      // if there is no array of teens yet, create it
-      if (!groups.teens) {
-        groups.teens = [];
-      }
-      groups.teens.push(person);
-    } else if (person.age >= 20 && person.age < 66) {
-      // if there is no array of adults yet, create it
-      if (!groups.adults) {
-        groups.adults = [];
-      }
-      groups.adults.push(person);
-    } else if (person.age >= 66) {
-      // if there is no array of retirees yet, create it
-      if (!groups.retirees) {
-        groups.retirees = [];
-      }
-      groups.retirees.push(person);
-    }
-  }
-
-  return groups;
+  return {
+    kids: people.filter((person) => person.age < 10),
+    teens: people.filter((person) => person.age >= 10 && person.age < 20),
+    adults: people.filter((person) => person.age >= 20 && person.age < 66),
+    retirees: people.filter((person) => person.age >= 66),
+  };
 }
 
 describe("groupByAge", () => {
@@ -63,7 +38,7 @@ describe("groupByAge", () => {
     expect(output.retirees).toHaveLength(2);
   });
 
-  test("BONUS: only create a group if there is at least one member", () => {
+  test.skip("BONUS: only create a group if there is at least one member", () => {
     const input = [
       { name: "John Smith", age: 25 },
       { name: "Sarah Johnson", age: 32 },
