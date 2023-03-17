@@ -1,13 +1,8 @@
 function groupByAge(people) {
-  return {
-    kids: people.filter((person) => person.age < 10),
-    teens: people.filter((person) => person.age >= 10 && person.age < 20),
-    adults: people.filter((person) => person.age >= 20 && person.age < 66),
-    retirees: people.filter((person) => person.age >= 66),
-  };
+  // Implement me!
 }
 
-describe("groupByAge", () => {
+describe.skip("groupByAge", () => {
   test("should return an object that groups people by their age as kids, teens, adults or retirees", () => {
     const input = [
       { name: "John Smith", age: 25 },
