@@ -27,4 +27,6 @@ This is repo which contains basic JavaScript exercises with jest tests.
 ### Strings
 
 1. countWords
-1. capitalize
+2. capitalize
+3. paymentOptions
+4. groupByAge
