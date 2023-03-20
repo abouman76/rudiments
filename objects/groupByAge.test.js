@@ -1,35 +1,60 @@
 /*
- * - create a variabe for the array method function
- * - loop through the array with a array function method. map() or Reduce()?
- * - filter-if statement on each livecycle/age: kids, teens, adults, retirees
+ * OPDRACHT: 1
+ * - create a variable for the array method function
+ * - loop through the array with an array function method: map() or Reduce()?
+ * - if statement on each livecycle/age: kids, teens, adults, retirees
  * - push each statement into the param of the reduce by "adding" the group and pushing it into this new group within the object.
  * - return the accumulator
  * - return the variable of the reduce()
  * - output should be: output = {kids: [1], teens: [2], adults: [5], retirees: [2]}
- *
+ *  OPDRACHT: 2
+ * - output should be: output =
  */
 
 
 
 function groupByAge(people) {
   const groups = people.reduce((acc, groupedByAge) => {
-    console.log('reduce', groupedByAge.age)
+   // console.log('reduce', groupedByAge.age)
     if(groupedByAge.age <= 9) {
-      acc.kids.push(groupedByAge);
-    } else if(groupedByAge.age >= 10 && groupedByAge.age <= 19) {
-      acc.teens.push(groupedByAge);
-    } else if(groupedByAge.age > 16 &&  groupedByAge.age <= 65) {
-      acc.adults.push(groupedByAge);
-    } else {
-      acc.retirees.push(groupedByAge);
+      if(acc.kids) {
+        acc.kids.push(groupedByAge);
+      } else {
+        acc.kids = [];
+        acc.kids.push(groupedByAge);
+      }
     }
+      if(groupedByAge.age >= 10 && groupedByAge.age <= 19) {
+        if(acc.teens) {
+          acc.teens.push(groupedByAge);
+        } else {
+          acc.teens = [];
+          acc.teens.push(groupedByAge);
+        }
+      }
+        if(groupedByAge.age > 19 &&  groupedByAge.age <= 65) {
+          if(acc.adults) {
+            acc.adults.push(groupedByAge);
+          } else {
+            acc.adults = [];
+            acc.adults.push(groupedByAge);
+          }
+      }
+        if (groupedByAge.age > 65) {
+          if(acc.retirees) {
+            acc.retirees.push(groupedByAge);
+          } else {
+            acc.retirees = [];
+            acc.retirees.push(groupedByAge);
+          }
+        }
 
     return acc;
 
-  }, { kids: [], teens: [], adults: [], retirees: [] })
-    console.log('grouped', groups);
+    }, { });
+   // console.log('grouped', groups);
 
-  return groups;
+    return groups;
 }
 
 describe("groupByAge", () => {
@@ -63,7 +88,7 @@ describe("groupByAge", () => {
     expect(output.retirees).toHaveLength(2);
   });
 
-  test.skip("BONUS: only create a group if there is at least one member", () => {
+  test("BONUS: only create a group if there is at least one member", () => {
     const input = [
       { name: "John Smith", age: 25 },
       { name: "Sarah Johnson", age: 32 },
